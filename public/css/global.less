@@ -1,0 +1,167 @@
+// out: global.css, sourcemap: false, compress: true
+
+@main: #25232D;
+@color-2: #FBFEE5;
+@color-3: #FA6900;
+@color-4: #A7DBD8;
+@color-5: #69D2E7;
+
+body{
+  background: @main;
+  color: #FBFEE5;
+}
+.pull-center{
+  display: table;
+  margin: 0 auto;
+}
+#content{
+  height: 100vh;
+  position: relative;
+}
+.main__container{
+  height: 89vh;
+  position: relative;
+}
+.bgMusic{
+  position: fixed;
+  width: 100%;
+  .bgImage__big{
+    width: 100%;
+    height: 100vh;
+    -webkit-filter: blur(10px);
+  }
+  .bgImage__little{
+    width: 50vw;
+    padding-bottom: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.search{
+  position: relative;
+  z-index: 1;
+  div{
+    width: 100%;
+    .search__input{
+      width: 100%;
+      padding: 15px;
+      outline: none;
+      border: none;
+      background: rgba(0,0,0,0.4);
+      color: #ffffff;
+      font-weight: bold;
+    }
+    div{
+      background: fadeout(#000,10%);
+      z-index: 999;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.player{
+  position: absolute;
+  width: 100%;
+  bottom: 45px;
+  button{
+    background: transparent;
+    box-shadow:  inset 0 0 0 2px @color-2;
+    border: none;
+    transition: 0.3s;
+    color: @color-2;
+    border-radius: 50%;
+    position: relative;
+    padding: 35px;
+    outline: none;
+    font-size: 22px;
+    &:hover{
+        box-shadow: inset 0 0 0 10px @color-2;
+        i{
+          transform: translate(-50%,-50%) scale(0.8);
+        }
+    }
+    i{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition: 0.3s;
+    }
+  }
+  .player__backward{
+    i{
+      left: 45%;
+    }
+  }
+  .player__main{
+    button{
+      margin: 0 5px;
+    }
+    .playMe {
+      padding: 75px;
+      font-size: 75px;
+
+    }
+  }
+  .player__forward{
+      i{
+        left: 55%;
+      }
+  }
+}
+
+.progress{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: visible;
+  height: 5px;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  .player__time-elapsed{
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    font-weight: bold;
+    color: @color-2;
+  }
+  .player__time-total {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    color: @color-2;
+    font-weight: bold;
+  }
+  progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+     appearance: none;
+     width: 100%;
+     height: 100%;
+  }
+  progress[value]::-webkit-progress-bar {
+    background: rgba(0,0,0,0.2);
+    border-radius: 2px;
+  }
+  progress[value]::-webkit-progress-value {
+      background-color: @color-3;
+      border-radius: 2px;
+      background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
